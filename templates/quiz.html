@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <div class="small">Olá, {{ convidado.nome }}! • Pergunta {{ progresso }} de {{ total }}</div>
+  <h2>{{ pergunta.texto }}</h2>
+
+  <form method="post">
+    {% csrf_token %}
+    <input type="hidden" name="pergunta_id" value="{{ pergunta.id }}">
+    <button class="option" name="alternativa" value="A">A) {{ pergunta.alternativa_a }}</button>
+    <button class="option" name="alternativa" value="B">B) {{ pergunta.alternativa_b }}</button>
+    <button class="option" name="alternativa" value="C">C) {{ pergunta.alternativa_c }}</button>
+    <button class="option" name="alternativa" value="D">D) {{ pergunta.alternativa_d }}</button>
+  </form>
+</div>
+
+<div class="card">
+  <strong>Seus pontos: {{ convidado.pontos }} 🏆</strong>
+</div>
+<a class="btn" href="{% url 'ranking' %}">🏆 Ver ranking</a>
+{% endblock %}

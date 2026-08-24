@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="hero">
+
+    <img
+        src="{% static 'images/tema_aniversario.jpeg' %}"
+        alt="Tema do aniversário"
+        class="hero-image"
+    >
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content">
+
+        <span class="hero-badge">
+            🎂 1 ANO
+        </span>
+
+
+        <h1 class="hero-title">
+
+            Vamos brincar?
+
+        </h1>
+
+
+        <p class="hero-subtitle">
+
+            Participe dos desafios,
+            acumule pontos e descubra
+            quem conhece melhor
+            o nosso aniversariante! ❤️
+
+        </p>
+
+
+        <a
+            href="#participar"
+            class="btn hero-btn"
+        >
+
+            🎮 PARTICIPAR AGORA
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<section
+    class="participar card"
+    id="participar"
+>
+
+    <div class="section-icon">
+        🎉
+    </div>
+
+    <h2>
+        Entre na brincadeira!
+    </h2>
+
+    <p class="small">
+        Digite seu nome para começar
+        e prepare-se para os desafios.
+    </p>
+
+
+    <form method="post">
+
+        {% csrf_token %}
+
+        <input
+            type="text"
+            name="nome"
+            maxlength="100"
+            placeholder="Digite seu nome"
+            required
+        >
+
+        <button
+            type="submit"
+            class="btn"
+        >
+            🚀 COMEÇAR O JOGO
+        </button>
+
+    </form>
+
+</section>
+
+
+<section class="momentos">
+
+    <div class="section-title">
+
+        <span>
+            📸
+        </span>
+
+        <div>
+
+            <h2>
+                Momentos especiais
+            </h2>
+
+            <p>
+                Um pouquinho da história
+                do nosso pequeno ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="gallery">
+
+
+        <div class="gallery-item gallery-large">
+
+            <img
+                src="{% static 'images/A mimir.jpg' %}"
+                alt="Momento do aniversariante"
+            >
+
+            <div class="photo-caption">
+                💤 A mimir...
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="{% static 'images/galã.jpg' %}"
+                alt="Momento do aniversariante"
+            >
+
+            <div class="photo-caption">
+                😎 O galã
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="{% static 'images/brabo_bebe.jpg' %}"
+                alt="Momento do aniversariante"
+            >
+
+            <div class="photo-caption">
+                👶 O brabo
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<section class="ranking-preview">
+
+    <div>
+
+        <span class="trophy">
+            🏆
+        </span>
+
+        <h2>
+            Quem será o campeão?
+        </h2>
+
+        <p>
+            Responda as perguntas,
+            acumule pontos e tente
+            chegar ao topo!
+        </p>
+
+    </div>
+
+
+    <a
+        href="{% url 'ranking' %}"
+        class="btn"
+    >
+        🏆 VER RANKING
+    </a>
+
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,326 @@
+.bebe-game {
+
+    max-width: 700px;
+
+    margin: 20px auto;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 45px
+        rgba(0,0,0,.08);
+
+}
+
+
+/* HEADER */
+
+.game-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-bottom: 20px;
+
+    border-bottom:
+        1px solid #eee;
+
+    font-weight: bold;
+
+    color:
+        var(--primary);
+
+}
+
+
+.timer {
+
+    padding: 10px 16px;
+
+    border-radius: 50px;
+
+    background:
+        #fef3c7;
+
+    color:
+        #92400e;
+
+}
+
+
+/* TÍTULO */
+
+.game-title {
+
+    text-align: center;
+
+    padding: 25px 0;
+
+}
+
+
+.game-title h1 {
+
+    margin: 0;
+
+    font-size: 35px;
+
+}
+
+
+.game-title p {
+
+    color:
+        var(--muted);
+
+}
+
+
+/* FOTO */
+
+.photo-container {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    height: 350px;
+
+    margin: auto;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background:
+        #f4f4f5;
+
+}
+
+
+.photo-container img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    filter:
+        blur(18px);
+
+    transform:
+        scale(1.08);
+
+    transition:
+        filter 5s ease,
+        transform 5s ease;
+
+}
+
+
+/* FOTO NÍTIDA */
+
+.photo-container img.reveal {
+
+    filter:
+        blur(0);
+
+    transform:
+        scale(1);
+
+}
+
+
+/* PERGUNTA */
+
+.question {
+
+    margin-top: 30px;
+
+    text-align: center;
+
+}
+
+
+.question h2 {
+
+    margin-bottom: 20px;
+
+}
+
+
+/* OPÇÕES */
+
+.options {
+
+    display: grid;
+
+    gap: 12px;
+
+}
+
+
+.option {
+
+    width: 100%;
+
+    padding: 17px;
+
+    border: 2px solid #eee;
+
+    border-radius: 15px;
+
+    background: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        .2s;
+
+}
+
+
+.option:hover {
+
+    border-color:
+        var(--primary);
+
+    background:
+        #faf5ff;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.option.correct {
+
+    background:
+        #dcfce7;
+
+    border-color:
+        #22c55e;
+
+    color:
+        #166534;
+
+}
+
+
+.option.wrong {
+
+    background:
+        #fee2e2;
+
+    border-color:
+        #ef4444;
+
+    color:
+        #991b1b;
+
+}
+
+
+/* RESULTADO */
+
+.result {
+
+    margin-top: 25px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    background:
+        #fafafa;
+
+}
+
+
+.result-icon {
+
+    font-size: 60px;
+
+}
+
+
+.result h2 {
+
+    font-size: 30px;
+
+}
+
+
+.next-button {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        var(--primary);
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.hidden {
+
+    display: none;
+
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .bebe-game {
+
+        padding: 18px;
+
+        border-radius: 22px;
+
+    }
+
+
+    .photo-container {
+
+        height: 300px;
+
+    }
+
+
+    .game-title h1 {
+
+        font-size: 30px;
+
+    }
+
+}

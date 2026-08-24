@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: desafio-1-ano
+    runtime: python
+    buildCommand: pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --noinput
+    startCommand: gunicorn config.wsgi:application
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: "*"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: desafio-1-ano-db
+          property: connectionString
+
+databases:
+  - name: desafio-1-ano-db

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card final-card" style="text-align:center">
+
+    <div style="font-size:64px">🎉</div>
+
+    <h1> Você terminou o quiz!</h1>
+
+    <p>
+        {{ convidado.nome }}, sua pontuação atual foi:
+    </p>
+
+    <div
+        style="
+            font-size:48px;
+            font-weight:bold;
+            color:var(--primary);">
+        {{ convidado.pontos }}
+    </div>
+
+    <p>
+        Obrigado por participar do desafio de 1º ano do Dudu! 🎉
+    </p>
+
+</div>
+
+<a class="btn" href="{% url 'ranking' %}">
+    🏆 VER RANKING
+</a>
+
+
+<a class="btn" href="{% url 'sair' %}">
+    🔄 COMEÇAR NOVAMENTE
+</a>
+
+{% endblock %}

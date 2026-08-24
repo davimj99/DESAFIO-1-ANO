@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'css/resultado.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="resultado">
+
+
+    {% if acertou %}
+        <div class="resultado-icon"> 🎉</div>
+        <h1 class="resultado-titulo acerto">ACERTOU!</h1>
+
+        <p class="resultado-texto">
+            Mandou muito bem,
+            {{ convidado.nome }}! ❤️
+        </p>
+
+
+        <div class="resultado-imagem">
+            <img src="{% static 'images/dudu_correto.jpeg' %}" alt="Acertou!">
+        </div>
+
+
+        <div class="pontos-ganhos">
+            +{{ pergunta.pontos }} pontos 🏆
+        </div>
+
+
+    {% else %}
+
+        <div class="resultado-icon">😂</div>
+        <h1 class="resultado-titulo erro">OPA!</h1>
+
+        <p class="resultado-texto"> Dessa vez não foi,{{ convidado.nome }}!</p>
+
+
+        <div class="resultado-imagem">
+            <img src="{% static 'images/brabo_bebe.jpg' %}" alt="Resposta errada">
+        </div>
+
+
+        <div class="resposta-correta">
+            <span>
+                A resposta correta era:
+            </span>
+
+            <strong>
+                {{ pergunta.correta }}
+            </strong>
+        </div>
+    {% endif %}
+
+
+    <div class="placar-atual">🏆 Sua pontuação:
+        <strong>
+            {{ convidado.pontos }}
+        </strong>
+    </div>
+
+
+    <a href="{% url 'quiz' %}" class="btn">
+
+        {% if acertou %}
+            ➡️ PRÓXIMA PERGUNTA
+        {% else %}
+            ➡️ CONTINUAR
+        {% endif %}
+    </a>
+</div>
+{% endblock %}

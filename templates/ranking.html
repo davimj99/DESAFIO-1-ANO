@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h1>🏆 Ranking</h1>
+  {% for convidado in convidados %}
+    <div class="ranking">
+      <span class="rank">
+        {% if forloop.counter == 1 %}🥇{% elif forloop.counter == 2 %}🥈{% elif forloop.counter == 3 %}🥉{% else %}{{ forloop.counter }}º{% endif %}
+      </span>
+      <span style="flex:1">{{ convidado.nome }}</span>
+      <span class="points">{{ convidado.pontos }} pts</span>
+    </div>
+  {% empty %}
+    <p>Ainda não há participantes.</p>
+  {% endfor %}
+</div>
+<a class="btn" href="{% url 'inicio' %}">🎮 Participar</a>
+{% endblock %}
