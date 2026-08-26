@@ -17,17 +17,100 @@
     </header>
 
 
-    <main class="container">
-        {% if messages %}
-            {% for message in messages %}
-                <div class="msg">
-                    {{ message }}
-                </div>
-            {% endfor %}
-        {% endif %}
+{% load static %} 
+ 
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+ 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Desafio do 1º Ano 🎉</title> 
 
-        {% block content %}
+    <link rel="icon" type="image/x-icon" href="{% static 'images/dudu.favicon.png' %}">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+</head> 
+ 
+<body> 
+
+    <header class="top"> 
+        🎉 DESAFIO DO 1º ANO DO DUDU 🎉
+    </header> 
+ 
+    <main class="container"> 
+
+        {% if messages %} 
+            {% for message in messages %} 
+                <div class="msg"> 
+                    {{ message }} 
+                </div> 
+            {% endfor %} 
+        {% endif %} 
+ 
+        {% block content %} 
         {% endblock %}
+
     </main>
-</body>
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <p class="footer-title">
+            🎂 Desafio do 1º Ano do Dudu 🎉
+        </p>
+
+        <p class="footer-description">
+            Um desafio especial para comemorar o primeiro aninho
+            do nosso pequeno Eduardo! 💙
+        </p>
+
+        <div class="footer-line"></div>
+
+        <div class="footer-credits">
+
+        <a
+            class="credit"
+            href="https://www.linkedin.com/in/davisouza99/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            👨‍💻 Desenvolvido pelo Papai
+        </a>
+
+            <span class="credit">
+                💻 Davi Dev
+            </span>
+
+            <span class="credit">
+                ❤️ Mamãe ajudou
+            </span>
+
+        <a
+            class="linkedin-button"
+            href="https://www.linkedin.com/in/davisouza99/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <span class="linkedin-icon">in</span>
+            LinkedIn do Papai
+        </a>    
+
+        </div>
+
+        <p class="footer-love">
+            Feito com muito carinho, código e amor para o Dudu. 🥰
+        </p>
+
+        <p class="footer-love">
+            © 2026 • Desafio do 1º Ano
+        </p>
+
+    </div>
+
+</footer>
+ 
+</body> 
 </html>
