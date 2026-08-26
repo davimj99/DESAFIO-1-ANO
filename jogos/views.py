@@ -188,5 +188,33 @@ def sair(request):
 def quebra_cabeca(request):
     return render(
         request,
-        "quebra_cabeca.html"
+        "quebra_cabeca.html")
+
+def finalizar_quebra_cabeca(request):
+
+    if request.method != "POST":
+        return redirect("quebra_cabeca")
+
+    convidado_id = request.session.get("convidado_id")
+
+    if not convidado_id:
+        return redirect("inicio")
+
+    convidado = Convidado.objects.get(
+        id=convidado_id
     )
+
+    pontos = int(
+        request.POST.get("pontos", 0)
+    )
+
+    # Garante que o jogo não envie mais de 200 pontos
+    pontos = max(0, min(pontos, 200))
+
+    convidado.pontos += pontos
+
+    convidado.save(
+        update_fields=["pontos"]
+    )
+
+    return redirect("ranking")

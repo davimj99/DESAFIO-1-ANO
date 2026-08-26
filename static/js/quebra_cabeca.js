@@ -363,7 +363,6 @@ function updateScore() {
 // =====================================
 // FINALIZAR
 // =====================================
-
 function finishGame() {
 
     clearInterval(timerInterval);
@@ -378,8 +377,11 @@ function finishGame() {
     finalScore.textContent =
         score;
 
-    resultModal.classList.add("active");
+    document.getElementById(
+        "pontosQuebraCabeca"
+    ).value = score;
 
+    resultModal.classList.add("active");
 }
 
 

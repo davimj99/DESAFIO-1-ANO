@@ -327,3 +327,28 @@ body {
     }
 
 }
+
+.ranking-button {
+    display: block;
+
+    margin: 15px auto 0;
+
+    padding: 15px 30px;
+
+    border-radius: 12px;
+
+    background: #ff4081;
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.ranking-button:hover {
+    transform: scale(1.05);
+}

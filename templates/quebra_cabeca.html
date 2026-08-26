@@ -70,42 +70,64 @@
 
 
     <!-- Modal de resultado -->
-    <div id="resultModal" class="modal">
+<div id="resultModal" class="modal">
 
-        <div class="modal-content">
+    <div class="modal-content">
 
-            <div class="result-icon">
-                🎉
+        <div class="result-icon">
+            🎉
+        </div>
+
+        <h2>Parabéns!</h2>
+
+        <p>Você conseguiu montar o quebra-cabeça!</p>
+
+        <div class="result-info">
+
+            <div>
+                <span>⏱️ Tempo</span>
+                <strong id="finalTime">00:00</strong>
             </div>
 
-            <h2>Parabéns!</h2>
-
-            <p>Você conseguiu montar o quebra-cabeça!</p>
-
-            <div class="result-info">
-
-                <div>
-                    <span>⏱️ Tempo</span>
-                    <strong id="finalTime">00:00</strong>
-                </div>
-
-                <div>
-                    <span>🏆 Pontos</span>
-                    <strong id="finalScore">200</strong>
-                </div>
-
+            <div>
+                <span>🏆 Pontos</span>
+                <strong id="finalScore">200</strong>
             </div>
-
-            <button
-                id="restartButton"
-                class="restart-button"
-            >
-                🔄 Jogar Novamente
-            </button>
 
         </div>
 
+        <form
+            method="POST"
+            action="{% url 'finalizar_quebra_cabeca' %}"
+        >
+
+            {% csrf_token %}
+
+            <input
+                type="hidden"
+                name="pontos"
+                id="pontosQuebraCabeca"
+            >
+
+            <button
+                type="submit"
+                class="ranking-button"
+            >
+                🏆 VER RANKING
+            </button>
+
+        </form>
+
+        <button
+            id="restartButton"
+            class="restart-button"
+        >
+            🔄 Jogar Novamente
+        </button>
+
     </div>
+
+</div>
 
 
     <script src="{% static 'js/quebra_cabeca.js' %}"></script>
