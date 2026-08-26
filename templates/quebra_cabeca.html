@@ -1,0 +1,114 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quebra-Cabeça do Eduardo 🧩</title>
+
+    <link rel="stylesheet" href="{% static 'css/quebra_cabeca.css' %}">
+</head>
+
+<body>
+
+    <main class="game-container">
+
+        <header class="game-header">
+            <h1>🧩 Quebra-Cabeça do Eduardo</h1>
+            <p>Monte a foto e conquiste até <strong>200 pontos!</strong></p>
+        </header>
+
+        <section class="game-info">
+
+            <div class="info-card">
+                <span>⏱️ Tempo</span>
+                <strong id="timer">00:00</strong>
+            </div>
+
+            <div class="info-card">
+                <span>🏆 Pontos</span>
+                <strong id="score">200</strong>
+            </div>
+
+        </section>
+
+        <section class="game-content">
+
+            <div class="puzzle-area">
+
+                <div id="puzzle" class="puzzle">
+                    <!-- As peças serão criadas pelo JavaScript -->
+                </div>
+
+            </div>
+
+            <aside class="preview-area">
+
+                <h2>📸 Foto</h2>
+
+                <img
+                    src="{% static 'images/pascoa_dudu.jpeg' %}"
+                    alt="Foto do Eduardo"
+                    class="preview-image"
+                >
+
+                <p>
+                    Use a imagem como referência para montar o quebra-cabeça.
+                </p>
+
+            </aside>
+
+        </section>
+
+        <button id="startButton" class="start-button">
+            🎮 Começar Jogo
+        </button>
+
+    </main>
+
+
+    <!-- Modal de resultado -->
+    <div id="resultModal" class="modal">
+
+        <div class="modal-content">
+
+            <div class="result-icon">
+                🎉
+            </div>
+
+            <h2>Parabéns!</h2>
+
+            <p>Você conseguiu montar o quebra-cabeça!</p>
+
+            <div class="result-info">
+
+                <div>
+                    <span>⏱️ Tempo</span>
+                    <strong id="finalTime">00:00</strong>
+                </div>
+
+                <div>
+                    <span>🏆 Pontos</span>
+                    <strong id="finalScore">200</strong>
+                </div>
+
+            </div>
+
+            <button
+                id="restartButton"
+                class="restart-button"
+            >
+                🔄 Jogar Novamente
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="{% static 'js/quebra_cabeca.js' %}"></script>
+
+</body>
+</html>

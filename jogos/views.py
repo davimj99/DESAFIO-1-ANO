@@ -185,5 +185,8 @@ def sair(request):
     request.session.flush()
     return redirect("inicio")
 
-def bebe(request):
-    return render(request, "bebe.html")
+def quebra_cabeca(request):
+    return render(
+        request,
+        "quebra_cabeca.html"
+    )

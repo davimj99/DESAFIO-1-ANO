@@ -6,7 +6,7 @@
 
     <div style="font-size:64px">🎉</div>
 
-    <h1> Você terminou o quiz!</h1>
+    <h1>Você terminou o quiz!</h1>
 
     <p>
         {{ convidado.nome }}, sua pontuação atual foi:
@@ -26,10 +26,14 @@
 
 </div>
 
+<!-- NOVO DESAFIO -->
+<a class="btn" href="{% url 'quebra_cabeca' %}">
+    🧩 JOGAR QUEBRA-CABEÇA — +200 PONTOS
+</a>
+
 <a class="btn" href="{% url 'ranking' %}">
     🏆 VER RANKING
 </a>
-
 
 <a class="btn" href="{% url 'sair' %}">
     🔄 COMEÇAR NOVAMENTE
